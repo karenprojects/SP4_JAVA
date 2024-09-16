@@ -44,6 +44,8 @@ O usuario tambem pode realizar o login no sistema com os seguintes dados utiliza
 - cpf
 - senha
 
+link do video de explicação do projeto: https://youtu.be/vMbqBHLmXZk
+
 ## Endpoints
 #### localhost:8080
 
