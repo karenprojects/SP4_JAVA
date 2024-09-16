@@ -29,12 +29,12 @@ O usuario pode cadastrar os seguintes dados no sistema utilizando o metodo POST:
 
 O usuario pode deletar os seguintes dados no sistema utilizando o metodo DELETE:
 - Um exame
-- Uma consulta pelo id
+- Uma consulta
 
 
 O usuario pode visualizar os seguintes dados no sistema utilizando o metodo GET:
 - Lista de todos os exames
-- Lista de todas as consultas e de uma consulta específica
+- Lista de todas as consultas
 
 O usuario pode atualizar os seguintes dados no sistema utilizando o metodo PUT:
 - Data de hora da consulta
