@@ -13,117 +13,61 @@ Proposta de sistema online para agendamento médico, promovendo acesso facilitad
 ### Configuração do Spring
 - site: https://start.spring.io/
   ![Configuração Spring](imagensSp3Java/configSpring.png)
-- application.properties
-  ![Configuração application.properties](https://github.com/diegohs13/SP2_JAVA/blob/main/appProp.png)
 
-### Import insominia
-- insomnia v4
-- Importar arquivo
-  ![Importar arquivo](https://github.com/diegohs13/SP2_JAVA/blob/main/importInsomnia.png)
-  ![Import completo](https://github.com/diegohs13/SP2_JAVA/blob/main/importCompleto.png)
-- Importe o arquivo InsomniaSP2.json para o Insomnia
+- application.properties
+  ![Configuração application.properties](imagensSp3Java/appProp.png)
 
 ### Execução
-Após a importação do arquivo InsomniaSP2.json e a configuração do application.properties, o usuario pode rodar o Sprint2JavaApplication dentro do projeto java.
-![Execução](https://github.com/diegohs13/SP2_JAVA/blob/main/runApp.png)
+O usuario deve rodar o Sp3JavaApplication dentro do projeto java.
+![Execução](imagensSp3Java/javaApp.png)
 
 ### Utilização
 O usuario pode cadastrar os seguintes dados no sistema utilizando o metodo POST:
 - Paciente
 - Exame
-- Receita
-- Unidade
 - Consulta
-- Agendamento
-- Clinica
 
 O usuario pode deletar os seguintes dados no sistema utilizando o metodo DELETE:
-- Um paciente pelo cpf
-- Um exame pelo id
-- Uma receita pelo id
-- Uma unidade pelo id
+- Um exame
 - Uma consulta pelo id
-- Um agendamento pelo n_protocolo
-- Uma clinica pelo cnpj
+
 
 O usuario pode visualizar os seguintes dados no sistema utilizando o metodo GET:
-- Lista de todos os pacientes e de um paciente específico
-- Lista de todos os exames e de um exame específico
-- Lista de todas as receitas e de uma receita específica
-- Lista de todas as unidades e de uma unidade específica
+- Lista de todos os exames
 - Lista de todas as consultas e de uma consulta específica
-- Lista de todos os agendamentos e de um agendamento específico
-- Lista de todas as clinicas e de uma clinica específica
 
 O usuario pode atualizar os seguintes dados no sistema utilizando o metodo PUT:
-- Senha do paciente
 - Data de hora da consulta
-- Resultado do exame
-- Data de hora do agendamento
-- Telefone da clinica
-- Encaminhamento da receita
-- Tipo de exame da unidade
+- Data de hora do exame
 
-O usuario tambem pode realizar o login de um paciente no sistema com os seguintes dados utilizando o metodo POST:
+O usuario tambem pode realizar o login no sistema com os seguintes dados utilizando o metodo POST:
 - cpf
 - senha
 
 ## Endpoints
+#### localhost:8080
+
 PACIENTES
-- GET `/pacientes` - Retorna a lista de pacientes cadastrados no sistema.
-- POST `/pacientes/cadastrarPaciente` - Cadastra um novo paciente no sistema.
-- GET `/pacientes/{cpf}` - Retorna os dados de um paciente específico.
-- PUT `/pacientes/{cpf}/atualizarSenha` - Atualiza a senha de um paciente específico.
-- DELETE `/pacientes/{cpf}` - Deleta um paciente específico.
-- POST `/pacientes/{cpf}/login` - Realiza o login de um paciente no sistema.
+- `/pacientes` - Tela com a lista de pacientes cadastrados no sistema.
+- `/pacientes/cadastrar` - Cadastra um novo paciente no sistema.
+- `/pacientes/login` - Tela de login do paciente
+- `/pacientes/deletar` - Deleta um paciente específico.
+- `/pacientes/homeUser` - Tela de usuario.
 
 EXAMES
-- GET `/exames` - Retorna a lista de exames cadastrados no sistema.
-- GET `/exames/{id_exame}` - Retorna os dados de um exame específico.
-- PUT `/exames/{id_exame}/atualizarResultado` - Atualiza o resultado de um exame específico.
-- DELETE `/exames/{id_exame}` - Deleta um exame específico.
-- POST `/exames/cadastrarExame` - Cadastra um novo exame no sistema.
-
-RECEITAS
-- GET `/receitas` - Retorna a lista de receitas cadastradas no sistema.
-- GET `/receitas/{id_receita}` - Retorna os dados de uma receita específica.
-- PUT `/receitas/{id_receita}/atualizarEncaminhamento` - Atualiza o encaminhamento de uma receita específica.
-- DELETE `/receitas/{id_receita}` - Deleta uma receita específica.
-- POST `/receitas/cadastrarReceita` - Cadastra uma nova receita no sistema.
-
-UNIDADES
-- GET `/unidades` - Retorna a lista de unidades cadastradas no sistema.
-- GET `/unidades/{id_unidade}` - Retorna os dados de uma unidade específica.
-- PUT `/unidades/{id_unidade}/atualizarTipoExame` - Atualiza o tipo de exame de uma unidade específica.
-- DELETE `/unidades/{id_unidade}` - Deleta uma unidade específica.
-- POST `/unidades/cadastrarUnidade` - Cadastra uma nova unidade no sistema.
-
+- `/exames` - Tela com a lista de exames cadastrados no sistema.
+- `/exames/atualizar` - Atualiza a data e hora de um exame específico.
+- `/exames/deletar` - Deleta um exame específico.
+- `/exames/marcar` - Cadastra um novo exame no sistema.
 
 CONSULTAS
-- GET `/consultas` - Retorna a lista de consultas cadastradas no sistema.
-- GET `/consultas/{id_unidade}` - Retorna os dados de uma consulta específica.
-- PUT `/consultas/{id_unidade}/atualizarDataHoraConsulta` - Atualiza a data e hora de uma consulta específica.
-- DELETE `/consultas/{id_unidade}` - Deleta uma consulta específica.
-- POST `/consultas/cadastrarConsulta` - Cadastra uma nova consulta no sistema.
-
-
-AGENDAMENTOS
-- GET `/agendamentos` - Retorna a lista de agendamentos cadastrados no sistema.
-- GET `/agendamentos/{n_protocolo}` - Retorna os dados de um agendamento específico.
-- PUT `/agendamentos/{n_protocolo}/atualizarDataHoraAgendamento` - Atualiza a data e hora de um agendamento específico.
-- DELETE `/agendamentos/{n_protocolo}` - Deleta um agendamento específico.
-- POST `/agendamentos/cadastrarAgendamento` - Cadastra um novo agendamento no sistema.
-
-
-CLINICAS
-- GET `/clinicas` - Retorna a lista de clinicas cadastradas no sistema.
-- GET `/clinicas/{cnpj}` - Retorna os dados de uma clinica específica.
-- PUT `/clinicas/{cnpj}/atualizarTelefone` - Atualiza o telefone de uma clinica específica.
-- DELETE `/clinicas/{cnpj}` - Deleta uma clinica específica.
-- POST `/clinicas/cadastrarClinica` - Cadastra uma nova clinica no sistema.
+- `/consultas` - Tela com a lista de consultas cadastradas no sistema.
+- `/consultas/atualizar` - Atualiza a data e hora de uma consulta específica.
+- `/consultas/deletar` - Deleta uma consulta específica.
+- `/consultas/marcar` - Cadastra uma nova consulta no sistema.
 
 ## Imagens
-![Diagrama de relacionamentos](https://github.com/diegohs13/SP1_JAVA/blob/main/Diagrama1.png)
+![Diagrama de relacionamentos](imagensSp3Java/bdRelation.png)
 - _**Entidades e Atributos**_<br>
   <br>
 
@@ -136,64 +80,24 @@ CLINICAS
 - email_paciente<br>
   <br>
 
-- **Clínica**
-- cnpj (chave primária)
-- nome_clinica
-- cel_clinica
-- conveniada<br>
-  <br>
 
 - **Consulta**
 - id_consulta (chave primária)
 - data_hora_consulta
-- idClinica (chave estrangeira)
-- idPaciente (chave estrangeira)
-- idAgendamento (chave estrangeira)<br>
+- especialidade<br>
   <br>
 
 - **Exames**
 - idExame (chave primária)
-- idConsulta (chave estrangeira)
-- tipo_exame
-- resultado<br>
+- data_hora_exame
+- tipo<br>
   <br>
 
-- **Agendamento**
-- n_protocolo (chave primária)
-- idPaciente (chave estrangeira)
-- dataHora_agendamento
-- clinica_agendamento<br>
-  <br>
-  <br>
-
-- **_Relacionamentos_**<br>
-  <br>
-
-- **Paciente para Consulta**
-- Um paciente pode ter várias consultas.
-- Uma consulta é específica de um paciente.<br>
-  <br>
-
-- **Paciente para Agendamento**
-- Um paciente pode ter vários agendamentos.
-- Um agendamento é específico de um paciente.<br>
-  <br>
-
-- **Consulta para Exames**
-- Uma consulta pode ter vários exames associados.
-- Um exame é específico de uma consulta.<br>
-  <br>
-
-- **Clínica para Consulta**
-- Uma clínica pode hospedar várias consultas.
-- Uma consulta acontece em uma clínica.<br>
-
-![Diagrama de clases](https://github.com/diegohs13/SP1_JAVA/blob/main/Diagrama2.png)
-- Paciente e Clinica estão associados a Agendamento(classe pai),  Consulta e Exame são heranças de Agendamento.<br>
+![Diagrama de clases](imagensSp3Java/Diagrama2.png)
 
 
 ## Nome da Aplicação
-Health Tech
+Easy Tech
 
 ## Nome completo e breve apresentação dos integrantes do Grupo
 - Diego Henrique Santos de Oliveira:
