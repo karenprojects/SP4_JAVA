@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>sp3java</artifactId>
+	<artifactId>sp4java</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sp3java</name>
 	<description>Terceira Sprint de Java</description>

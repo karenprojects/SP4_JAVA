@@ -1,6 +1,6 @@
-package com.example.sp3java.repository;
+package com.example.sp4java.repository;
 
-import com.example.sp3java.domain.Exame;
+import com.example.sp4java.domain.Exame;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ExameRepository extends JpaRepository<Exame,  Integer> {

@@ -1,11 +1,11 @@
-package com.example.sp3java.controller;
+package com.example.sp4java.controller;
 
-import com.example.sp3java.domain.AppUser;
-import com.example.sp3java.repository.AppUserRepository;
+import com.example.sp4java.domain.AppUser;
+import com.example.sp4java.repository.AppUserRepository;
 import jakarta.validation.Valid;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.ui.Model;
-import com.example.sp3java.domain.RegisterDto;
+import com.example.sp4java.domain.RegisterDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;

@@ -1,4 +1,4 @@
-package com.example.sp3java;
+package com.example.sp4java;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,6 +1,6 @@
-package com.example.sp3java.repository;
+package com.example.sp4java.repository;
 
-import com.example.sp3java.domain.Consulta;
+import com.example.sp4java.domain.Consulta;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ConsultaRepository extends JpaRepository<Consulta, Integer> {

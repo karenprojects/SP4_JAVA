@@ -1,8 +1,8 @@
-package com.example.sp3java.controller;
+package com.example.sp4java.controller;
 
-import com.example.sp3java.domain.Exame;
-import com.example.sp3java.domain.ExameDto;
-import com.example.sp3java.repository.ExameRepository;
+import com.example.sp4java.domain.Exame;
+import com.example.sp4java.domain.ExameDto;
+import com.example.sp4java.repository.ExameRepository;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

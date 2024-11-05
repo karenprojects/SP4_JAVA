@@ -1,8 +1,8 @@
-package com.example.sp3java.controller;
+package com.example.sp4java.controller;
 
-import com.example.sp3java.domain.Paciente;
-import com.example.sp3java.domain.PacienteDto;
-import com.example.sp3java.repository.PacienteRepository;
+import com.example.sp4java.domain.Paciente;
+import com.example.sp4java.domain.PacienteDto;
+import com.example.sp4java.repository.PacienteRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

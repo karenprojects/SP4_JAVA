@@ -1,6 +1,6 @@
-package com.example.sp3java.repository;
+package com.example.sp4java.repository;
 
-import com.example.sp3java.domain.AppUser;
+import com.example.sp4java.domain.AppUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AppUserRepository extends JpaRepository<AppUser, Integer> {

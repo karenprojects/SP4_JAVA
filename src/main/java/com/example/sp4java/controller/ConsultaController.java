@@ -1,8 +1,8 @@
-package com.example.sp3java.controller;
+package com.example.sp4java.controller;
 
-import com.example.sp3java.domain.Consulta;
-import com.example.sp3java.domain.ConsultaDto;
-import com.example.sp3java.repository.ConsultaRepository;
+import com.example.sp4java.domain.Consulta;
+import com.example.sp4java.domain.ConsultaDto;
+import com.example.sp4java.repository.ConsultaRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

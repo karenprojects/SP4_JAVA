@@ -1,7 +1,7 @@
-package com.example.sp3java.service;
+package com.example.sp4java.service;
 
-import com.example.sp3java.domain.AppUser;
-import com.example.sp3java.repository.AppUserRepository;
+import com.example.sp4java.domain.AppUser;
+import com.example.sp4java.repository.AppUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;

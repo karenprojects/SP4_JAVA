@@ -1,4 +1,4 @@
-package com.example.sp3java.domain;
+package com.example.sp4java.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
