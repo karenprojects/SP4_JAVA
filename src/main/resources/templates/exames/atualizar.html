@@ -1,23 +1,54 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Alterar data</title>
+    <title>Alterar Data - Easy Tech</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f7faff; /* Fundo claro para manter a consistência */
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h2 {
+            color: #3A7CA5; /* Cor do título */
+        }
+        .btn-primary {
+            background-color: #3A7CA5; /* Cor do botão primário */
+            border-color: #3A7CA5;
+        }
+        .btn-primary:hover {
+            background-color: #5A9DC7; /* Efeito hover para botão primário */
+        }
+        .btn-outline-primary {
+            color: #3A7CA5; /* Cor do botão de voltar */
+            border-color: #3A7CA5;
+        }
+        .btn-outline-primary:hover {
+            background-color: #3A7CA5; /* Efeito hover para botão de voltar */
+            color: white;
+        }
+        .text-danger {
+            font-size: 0.9rem;
+            color: #FF4500; /* Cor para mensagens de erro */
+        }
+        .border {
+            border: 1px solid #DAE8FC; /* Cor da borda */
+        }
+    </style>
 </head>
 <body>
 <div class="container">
     <div class="row">
         <div class="col-md-8 mx-auto rounded border p-4 m-4">
-            <h2 class="text-center mb-5">Alterar data</h2>
+            <h2 class="text-center mb-5">Alterar Data</h2>
             <form method="post" th:action="@{/exames/atualizar}" th:object="${exameDto}">
                 <input type="hidden" th:field="*{id_exame}" />
 
                 <div class="row mb-3">
                     <label class="col-sm-4 col-form-label">Tipo</label>
                     <div class="col-sm-8">
-
                         <input class="form-control-plaintext" th:value="*{tipo}" readonly />
                         <input type="hidden" th:field="*{tipo}" />
                     </div>
@@ -26,7 +57,7 @@
                 <div class="row mb-3">
                     <label class="col-sm-4 col-form-label">Data</label>
                     <div class="col-sm-8">
-                        <input type="datetime-local" class="form-control" th:field="*{data_hora_exame}">
+                        <input type="datetime-local" class="form-control" th:field="*{data_hora_exame}" required>
                         <p th:if="${#fields.hasErrors('data_hora_exame')}" class="text-danger" th:errors="*{data_hora_exame}"></p>
                     </div>
                 </div>
@@ -40,7 +71,6 @@
                     </div>
                 </div>
             </form>
-
         </div>
     </div>
 </div>
