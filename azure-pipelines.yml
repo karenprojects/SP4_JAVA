@@ -7,15 +7,15 @@ pool:
 steps:
 - task: JavaToolInstaller@0
   inputs:
-    versionSpec: '21'
-    jdkArchitecture: 'x64'
+    versionSpec: '21'   # Especifica a versão do Java
+    jdkArchitecture: 'x64'  # Adiciona a arquitetura corretamente
 
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JAVA_HOME'
-    jdkArchitectureOption: 'x64'  # Corrigido: especificando a arquitetura
+    jdkArchitectureOption: 'x64'  # Certificando que a arquitetura esteja definida
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
