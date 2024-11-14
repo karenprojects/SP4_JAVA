@@ -5,17 +5,20 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+# 1. Instalar o JDK versão 21 com a arquitetura x64
 - task: JavaToolInstaller@0
   inputs:
-    versionSpec: '21'   # Especifica a versão do Java
-    jdkArchitecture: 'x64'  # Adiciona a arquitetura corretamente
+    versionSpec: '21'   # Especifica a versão do JDK
+    jdkArchitecture: 'x64'  # Arquitetura do JDK (x64 é a mais comum)
 
+# 2. Executar Maven para compilar o projeto
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JAVA_HOME'
-    jdkArchitectureOption: 'x64'  # Certificando que a arquitetura esteja definida
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '21'  # Versão do JDK
+    jdkArchitectureOption: 'x64'  # Arquitetura do JDK
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
