@@ -15,7 +15,7 @@ steps:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JAVA_HOME'
-    jdkArchitectureOption: 'x64'
+    jdkArchitectureOption: 'x64'  # Corrigido: especificando a arquitetura
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
