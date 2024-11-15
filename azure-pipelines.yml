@@ -5,21 +5,23 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+# Instalação do JDK 21
 - task: JavaToolInstaller@0
   inputs:
     versionSpec: '21'  # Definindo a versão do JDK para 21
     jdkArchitectureOption: 'x64'  # Arquitetura do JDK (x64 é o mais comum)
     jdkPackageType: 'JDK'
     installationPath: $(Agent.ToolsDirectory)/jdk-21
-    jdkSourceOption: 'PreInstalled'  # Usando JDK já instalado no agente
+    jdkSourceOption: 'InstallFromMaven'  # Especificando a origem do JDK (Maven)
 
+# Execução do Maven para build e testes
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
+    mavenOptions: '-Xmx3072m -Dmaven.test.failure.ignore=false'  # Certificando-se de que falhas nos testes não são ignoradas
     javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '21'  # Especificando a versão correta do JDK
-    jdkArchitectureOption: 'x64'  # Especificando a arquitetura correta
+    jdkVersionOption: '21'  # Versão do JDK configurada
+    jdkArchitectureOption: 'x64'  # Arquitetura configurada
     publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'  # Local dos resultados dos testes
+    goals: 'package'  # Meta de Maven (compilar e empacotar)
