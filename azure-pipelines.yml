@@ -2,12 +2,12 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 steps:
 - task: JavaToolInstaller@0
   inputs:
-    versionSpec: '21'   # Definindo a versão do JDK para 21
+    versionSpec: '21'  # Definindo a versão do JDK para 21
     jdkArchitectureOption: 'x64'  # Arquitetura do JDK (x64 é o mais comum)
     jdkPackageType: 'JDK'
     installationPath: $(Agent.ToolsDirectory)/jdk-21
@@ -22,14 +22,3 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-- task: Maven@4
-  inputs:
-    azureSubscription: 'Azure for Students(42f22123-2b17-4f73-9cbf-5e9eb1a81d38)'
-    mavenPomFile: 'pom.xml'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sonarQubeRunAnalysis: false
