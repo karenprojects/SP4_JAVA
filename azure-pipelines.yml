@@ -11,7 +11,7 @@ steps:
     jdkArchitectureOption: 'x64'  # Arquitetura do JDK (x64 é o mais comum)
     jdkPackageType: 'JDK'
     installationPath: $(Agent.ToolsDirectory)/jdk-21
-    jdkSourceOption: 'InstallFromMaven'  # Especificando a origem do JDK (Maven)
+    jdkSourceOption: 'PreInstalled'  # Usando JDK já instalado no agente
 
 - task: Maven@4
   inputs:
