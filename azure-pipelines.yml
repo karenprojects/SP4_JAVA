@@ -1,8 +1,3 @@
-# Maven
-# Build your Java project and run tests with Apache Maven.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/java
-
 trigger:
 - main
 
@@ -10,12 +5,20 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+# Instala o JDK 21 manualmente
+- script: |
+    sudo apt update
+    sudo apt install -y openjdk-21-jdk
+    echo "##vso[task.setvariable variable=JAVA_HOME]$(/usr/lib/jvm/java-21-openjdk-amd64)"
+    echo "JAVA_HOME is set to $(JAVA_HOME)"
+  displayName: 'Install JDK 21'
+
+# Configura o Maven para compilar o projeto
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.11'
+    javaHomeOption: 'Path'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
